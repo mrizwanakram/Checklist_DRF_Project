@@ -91,3 +91,35 @@ class CheckListItemAPIView(APIView):
         checklist_item = self.get_object(pk)
         checklist_item.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+
+
+# Genric Api Views Code
+
+# class CheckListApiView(ListCreateAPIView):
+#     permission_classes = [IsAuthenticated, IsOwner]
+#     def get_queryset(self):
+#         queryset = CheckList.objects.filter(user = self.request.user)
+#         return queryset
+
+# class CheckListAPIView(RetrieveUpdateDestroyAPIView):
+#     serializer_class = ChecklistSerializer
+#     permission_classes = [IsAuthenticated, IsOwner]
+
+#     def get_queryset(self):
+#         queryset = CheckList.objects.filter(user = self.request.user)
+#         return queryset
+
+
+# class CheckListItemCreateAPIView(CreateAPIView):
+#     serializer_class = ChecklistItemSerializer
+#     permission_classes = [IsAuthenticated, ]
+
+
+# class CheckListItemAPIView(RetrieveUpdateDestroyAPIView):
+#     permission_classes = [IsAuthenticated, IsOwner]
+#     serializer_class = ChecklistItemSerializer
+
+#     def get_queryset(self):
+#         queryset = CheckListItem.objects.filter(user = self.request.user)
+#         return queryset
